@@ -1,3 +1,5 @@
+## [1.1.1](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.1.0...v1.1.1) (2026-01-30)
+
 # [1.1.0](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.0.4...v1.1.0) (2026-01-30)
 
 
