@@ -38,3 +38,17 @@ jobs:
           GIT_AUTHOR_NAME: Zelda Team
           GIT_COMMITTER_NAME: Zelda Team
         run: npx semantic-release
+
+  report-version:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Show latest release tag
+        run: |
+          VERSION=$(git describe --tags --abbrev=0)
+          echo "Latest release tag: ${VERSION}"
