@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: ./package-lock.json
 
@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Setup release config
-        run: cp .releaserc.prod.js .releaserc.js
+        run: cp .releaserc.prod.js .releaserc.cjs
 
       - name: Run semantic-release for prod
         env:
