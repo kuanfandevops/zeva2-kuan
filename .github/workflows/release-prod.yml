@@ -1,9 +1,11 @@
-name: Semantic Release
+name: Release to Prod (Stable Release)
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 1.0.0)'
+        required: true
 
 permissions:
   contents: write
@@ -31,9 +33,9 @@ jobs:
           cd next
           npm ci
 
-      - name: Run semantic-release
+      - name: Run semantic-release for prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd next
-          npx semantic-release
+          npx semantic-release --config ../../.releaserc.prod.json
