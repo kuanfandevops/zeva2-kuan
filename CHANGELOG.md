@@ -1,3 +1,15 @@
+## [1.0.3](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.0.2...v1.0.3) (2026-01-30)
+
+
+### Bug Fixes
+
+* convert release configs from JSON to JS for semantic-release compatibility ([67feb5f](https://github.com/kuanfandevops/zeva2-kuan/commit/67feb5f879e748ba19f03f763c80840fe31eb804))
+* remove invalid tarballDir option ([ea8291d](https://github.com/kuanfandevops/zeva2-kuan/commit/ea8291d129ebb900a1e1a64d923f121a170dcb3b))
+* update pipelines and releacerc ([0fde7b7](https://github.com/kuanfandevops/zeva2-kuan/commit/0fde7b794ec7aa71249f66e47127be6e6ae3e7cd))
+* update release workflow configurations ([196e3e6](https://github.com/kuanfandevops/zeva2-kuan/commit/196e3e66b06dc2bb8468c59c12b45f922871a8f1))
+* update workflows to run semantic-release from root directory ([d8c284a](https://github.com/kuanfandevops/zeva2-kuan/commit/d8c284a2c24abf6012856ad0695c77bef3cc420f))
+* use cjs for semantic-release config ([cde8691](https://github.com/kuanfandevops/zeva2-kuan/commit/cde8691720ac3191330e72a68651d5cbb6cd6693))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
