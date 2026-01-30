@@ -34,4 +34,4 @@ jobs:
       - name: Run semantic-release for rc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --config .releaserc.rc.json
+        run: npx semantic-release --config .releaserc.rc.js

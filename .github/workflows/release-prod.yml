@@ -34,4 +34,4 @@ jobs:
       - name: Run semantic-release for prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --config .releaserc.prod.json
+        run: npx semantic-release --config .releaserc.prod.js
