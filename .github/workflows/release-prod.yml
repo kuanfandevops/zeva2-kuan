@@ -1,6 +1,9 @@
 name: Release to Prod (Stable Release)
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       version:
