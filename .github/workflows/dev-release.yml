@@ -35,4 +35,6 @@ jobs:
       - name: Run semantic-release for dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: Zelda Team
+          GIT_COMMITTER_NAME: Zelda Team
         run: npx semantic-release
