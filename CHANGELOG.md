@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.0.4...v1.1.0) (2026-01-30)
+
+
+### Features
+
+* add feat1 ([802a41e](https://github.com/kuanfandevops/zeva2-kuan/commit/802a41e6209029cfc76eaf82cf44ce6f155f7d90))
+
 ## [1.0.4](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.0.3...v1.0.4) (2026-01-30)
 
 
