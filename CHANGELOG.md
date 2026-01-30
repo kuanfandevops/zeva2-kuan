@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.0.3...v1.0.4) (2026-01-30)
+
+
+### Bug Fixes
+
+* update readme ([fa4fa58](https://github.com/kuanfandevops/zeva2-kuan/commit/fa4fa5875fa1670a764ac88e40b15e759f590349))
+
 ## [1.0.3](https://github.com/kuanfandevops/zeva2-kuan/compare/v1.0.2...v1.0.3) (2026-01-30)
 
 
