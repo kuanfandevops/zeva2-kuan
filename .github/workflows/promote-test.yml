@@ -43,7 +43,7 @@ jobs:
           echo "tag=$(git describe --tags --abbrev=0 2>/dev/null || true)" >> "$GITHUB_OUTPUT"
 
       - name: Setup release config
-        run: cp .releaserc.rc.js .releaserc.cjs
+        run: cp .releaserc.rc.cjs .releaserc.cjs
 
       - name: Run semantic-release for rc
         env:
