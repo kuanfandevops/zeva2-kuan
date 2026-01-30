@@ -31,7 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Setup release config
+        run: cp .releaserc.rc.js .releaserc.mjs
+
       - name: Run semantic-release for rc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --config .releaserc.rc.js
+        run: npx semantic-release

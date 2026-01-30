@@ -31,7 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Setup release config
+        run: cp .releaserc.prod.js .releaserc.js
+
       - name: Run semantic-release for prod
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --config .releaserc.prod.js
+        run: npx semantic-release
