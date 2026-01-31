@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       release_version: ${{ steps.release_version.outputs.version }}
+      release_is_new: ${{ steps.release_version.outputs.is_new }}
+      release_tag: ${{ steps.release_version.outputs.tag }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -55,11 +57,14 @@ jobs:
           PREV_TAG="${{ steps.prev_tag.outputs.tag }}"
           if [ -n "$NEW_TAG" ] && [ "$NEW_TAG" != "$PREV_TAG" ]; then
             echo "Release created: $NEW_TAG"
+            echo "is_new=true" >> "$GITHUB_OUTPUT"
           else
             echo "No new release tag created; using latest tag."
+            echo "is_new=false" >> "$GITHUB_OUTPUT"
           fi
           VERSION="${NEW_TAG#v}"
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
 
   report-version:
     needs: release
@@ -68,3 +73,9 @@ jobs:
       - name: Show release version
         run: |
           echo "Release version: ${{ needs.release.outputs.release_version }}"
+          if [ "${{ needs.release.outputs.release_is_new }}" = "true" ]; then
+            echo "Release tag source: new (created by semantic-release)"
+          else
+            echo "Release tag source: previous"
+          fi
+          echo "Release tag: ${{ needs.release.outputs.release_tag }}"
