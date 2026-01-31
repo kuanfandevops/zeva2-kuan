@@ -73,9 +73,11 @@ jobs:
       - name: Show release version
         run: |
           echo "Release version: ${{ needs.release.outputs.release_version }}"
+          echo "Release tag: ${{ needs.release.outputs.release_tag }}"
           if [ "${{ needs.release.outputs.release_is_new }}" = "true" ]; then
             echo "Release tag source: new (created by semantic-release)"
+            echo "There is new image built will happen for the newly created release"
           else
             echo "Release tag source: previous"
+            echo "There is no image built because the image shou;d have been build when the release was create before."
           fi
-          echo "Release tag: ${{ needs.release.outputs.release_tag }}"
