@@ -37,11 +37,17 @@ jobs:
         id: prev_tag
         run: |
           git fetch --tags
+          # Capture the latest tag reachable from the current commit before the release runs.
           echo "tag=$(git describe --tags --abbrev=0 2>/dev/null || true)" >> "$GITHUB_OUTPUT"
 
       - name: Setup release config
         run: cp .releaserc.dev.cjs .releaserc.cjs
 
+      # this step create a new tag or not, depending on semantic‑release formatting rules
+      # the following commit messages will create the corresponding version bump:
+      #   feat: → minor
+      #   fix: → patch
+      #   BREAKING CHANGE (or type!:) → major
       - name: Run semantic-release for dev
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,7 +59,9 @@ jobs:
         id: release_version
         run: |
           git fetch --tags
+          # Read the latest tag after semantic-release (may be new or unchanged).
           NEW_TAG=$(git describe --tags --abbrev=0 2>/dev/null || true)
+          # Compare with the pre-release tag to detect whether a new tag was created.
           PREV_TAG="${{ steps.prev_tag.outputs.tag }}"
           if [ -n "$NEW_TAG" ] && [ "$NEW_TAG" != "$PREV_TAG" ]; then
             echo "Release created: $NEW_TAG"

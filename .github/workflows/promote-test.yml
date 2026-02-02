@@ -22,6 +22,7 @@ jobs:
 
   create-pr-to-cd-repo:
     runs-on: ubuntu-latest
+    needs: update-values-test-yaml
     steps:
       - name: create-pr-to-cd-repo
         run: |
