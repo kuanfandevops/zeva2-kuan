@@ -13,10 +13,16 @@ permissions:
   pull-requests: write
 
 jobs:
-  report-version:
+  update-values-test-yaml:
     runs-on: ubuntu-latest
     steps:
-      - name: Show release version
+      - name: update-values-test-yaml
         run: |
-          echo "Release version: ${{ github.event.inputs.version }}"
+          echo "The image tag to be updated to: ${{ github.event.inputs.version }}
+
+  create-pr-to-cd-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create-pr-to-cd-repo
+        run: |
           echo "Create the pull request to update the image tag in values-test.yaml in CD Repo"
