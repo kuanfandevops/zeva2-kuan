@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: update-values-prod-yaml
         run: |
-          echo "The image tag to be updated to: ${{ github.event.inputs.version }}
+          echo "The image tag to be updated to: ${{ github.event.inputs.version }}"
 
   create-pr-to-cd-repo:
     runs-on: ubuntu-latest
