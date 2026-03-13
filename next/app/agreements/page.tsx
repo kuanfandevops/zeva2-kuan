@@ -30,14 +30,6 @@ const Page = async (props: { searchParams?: Promise<pageStringParams> }) => {
         userIsGov={userIsGov}
       />
     </Suspense>
-      <AgreementList
-        page={page}
-        pageSize={pageSize}
-        filters={filters}
-        sorts={sorts}
-        userIsGov={userIsGov}
-      />
-    
   );
 };
 
